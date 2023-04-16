@@ -1,0 +1,8 @@
+Problemas Migrations e Seeders
+    - ajuste:  na migration 2023_03_28_172401_create_documents_table.php
+    o campo $table->bigInteger('category_id'); para $table->unsignedBigInteger('category_id');
+    dessa forma eu garanto que a coluna category_id não receba valores negativos, já que a mesma é chave estrangeira de categories
+    - adicionado também na migration de documents a coluna exercise, que é referente ao ano do exercício dos documentos que estão sendo importados
+
+    - melhoria:  no arquivo DatabaseSeeder.php foi inserido a chamada do Seeder de Cartegory para que possa ser executado de forma mais organizada
+    executando apenas o comando php artisan db:seed
